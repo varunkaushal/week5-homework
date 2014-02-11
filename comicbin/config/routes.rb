@@ -53,4 +53,10 @@ Comicbin::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  get "/comics" => 'comics#index'
+  get "/comics/new" => 'comics#new'
+  get "/comics/create" => 'comics#create'
+  get "/comics/delete/:comic_id" => 'comics#toast'
+  get "/comics/:comic_id" => 'comics#show'
 end

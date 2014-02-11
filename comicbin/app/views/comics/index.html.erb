@@ -1,8 +1,9 @@
 <% @comics.in_groups_of(4, false).each_with_index do |group, index| %>
   <div class="row">
-    <% group.each do |comic| %>
-      <div class='col-lg-3 test'>
-        <!-- SHOW THE IMAGE OF THE COMIC BOOK AND MAKE THE ENTIRE IMAGE A LINK.
+    <% @comics.each do |comic| %>
+      <div class='col-lg-3'>
+		<%= link_to image_tag(comic.image), "/comics/#{comic.id}", :class => "image-responsive" %>
+		<!-- SHOW THE IMAGE OF THE COMIC BOOK AND MAKE THE ENTIRE IMAGE A LINK.
              ATTACH THE CLASS OF 'image-responsive' TO THIS LINK -->
       </div>
     <% end %>
