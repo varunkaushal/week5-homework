@@ -24,15 +24,14 @@ class ComicsController < ApplicationController
   end
 
   def new
-
+	render 'new'
   end
 
   def create
     c = Comic.new
-	c.title = comic_info["title"]
-	c.issueNum = comic_info["issueNumber"]
-	c.description = comic_info["descrtiption"]
-	c.image = comic_info["thumbnail"]
+	c.title = params["title"]
+	c.description = params["description"]
+	c.image = params["image"]
 	c.save
 
     redirect_to "/comics"
